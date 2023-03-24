@@ -1,0 +1,15 @@
+.address {
+  font-size: 14px;
+  line-height: 2.15;
+  font-style: normal;
+  &__logo {
+    margin-bottom: 20px;
+  }
+  &__link {
+    color: $color-white-opacity;
+    &:hover,
+    &:focus {
+      color: $color-white-opacity;
+    }
+  }
+}

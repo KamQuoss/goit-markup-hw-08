@@ -1,0 +1,43 @@
+h1,
+h2,
+h3,
+p,
+figure,
+dialog {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+svg {
+  fill: currentColor;
+}
+
+button {
+  color: inherit;
+  cursor: pointer;
+}
+
+input {
+  color: inherit;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--color-black);
+  letter-spacing: 0.03em;
+}

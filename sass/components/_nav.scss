@@ -1,0 +1,29 @@
+.nav {
+  &__list {
+    display: flex;
+    gap: 46px;
+  }
+  &__link {
+    @extend %page-header-link;
+    &--active,
+    &:hover,
+    &:focus {
+      color: $color-primary;
+    }
+    &--active{
+      position: relative;
+      &::after {
+        $border-width: .25rem;
+        position: absolute;
+        content: "";
+        bottom: -32px; // ta wielkość jest zależna od paddingu dolnego, wielkości napisów w nagłówku i szerokości linii
+        left: 0;
+        width: 100%;
+        height: $border-width;
+        background: $color-primary;
+        border-radius: calc($border-width / 2);
+        cursor: default;
+      }
+    }
+  }
+}

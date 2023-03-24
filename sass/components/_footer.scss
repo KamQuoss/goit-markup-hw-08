@@ -1,0 +1,15 @@
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: $color-white;
+  background-color: $color-grey-900;
+
+  &__header {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.15;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+}

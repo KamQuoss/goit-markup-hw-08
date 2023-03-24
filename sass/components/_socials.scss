@@ -1,0 +1,29 @@
+.socials {
+  display: flex;
+  gap: 10px;
+  &__link {
+    width: 44px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-gray-300;
+    @include transition(background-color, color);
+    &:focus,
+    &:hover {
+      color: $color-white;
+      background-color: $color-primary;
+    }
+  }
+  &--theme-dark {
+    .socials__link {
+      color: $color-white;
+      background-color: rgba(255, 255, 255, 0.1);
+      &:focus,
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+  }
+}

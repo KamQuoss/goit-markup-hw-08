@@ -1,13 +1,20 @@
 .logo {
   font-family: "Raleway";
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-  color: black;
+  font-size: 24px;
+  line-height: 1.15;
+  color: $color-black;
   &--white {
-    color: white;
+    color: $color-white;
   }
   &__accent {
-    color: #2196f3;
+    color: $color-primary;
+  }
+}
+
+@media (min-width: $tablet-breakpoint) {
+  .logo {
+    font-size: 26px;
+    line-height: 1.19;
   }
 }

@@ -1,7 +1,9 @@
 .contact {
   &__list {
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 30px;
   }
   &__link {
     @extend %page-header-link;
@@ -17,5 +19,11 @@
   &__icon {
     width: 1rem;
     height: 1rem;
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .contact {
+    display: none;
   }
 }

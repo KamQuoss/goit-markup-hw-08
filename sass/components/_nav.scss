@@ -1,29 +1,51 @@
-.nav {
-  &__list {
-    display: flex;
-    gap: 46px;
+@media (max-width: $tablet-breakpoint) {
+  .nav {
+    display: none;
   }
-  &__link {
-    @extend %page-header-link;
-    &--active,
-    &:hover,
-    &:focus {
-      color: $color-primary;
+}
+
+@media (min-width: $tablet-breakpoint) {
+  .nav {
+    &__list {
+      display: flex;
+      gap: 60px;
     }
-    &--active{
-      position: relative;
-      &::after {
-        $border-width: .25rem;
-        position: absolute;
-        content: "";
-        bottom: -32px; // ta wielkość jest zależna od paddingu dolnego, wielkości napisów w nagłówku i szerokości linii
-        left: 0;
-        width: 100%;
-        height: $border-width;
-        background: $color-primary;
-        border-radius: calc($border-width / 2);
-        cursor: default;
+    &__link {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      @include transition(color);
+      &--active,
+      &:hover,
+      &:focus {
+        color: $color-primary;
       }
+      &--active {
+        position: relative;
+        &::after {
+          $border-width: 0.25rem;
+          position: absolute;
+          content: "";
+          bottom: -22px;
+          left: 0;
+          width: 100%;
+          height: $border-width;
+          background: $color-primary;
+          border-radius: calc($border-width / 2);
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+@media (min-width: $desktop-breakpoint) {
+  .nav {
+    &__list {
+      display: flex;
+      gap: 46px;
+    }
+    &__link--active::after {
+      bottom: -32px;
     }
   }
 }

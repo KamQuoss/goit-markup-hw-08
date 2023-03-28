@@ -12,13 +12,22 @@ $color-error: #f2413a;
 $color-white-opacity: rgba(255, 255, 255, 0.6);
 
 $grid-gutter: 30px;
+
 $border-radius: 4px;
 
+$min-width: 320px;
+$mobile-breakpoint: 480px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1200px;
+
+$container-padding: 15px;
+$section-padding-small: 60px;
+$section-padding-large: 60px;
 
 @mixin transition($properties...) {
-    transition-property: $properties;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-property: $properties;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 %page-header-link {

@@ -2,10 +2,34 @@
   display: flex;
   gap: $grid-gutter;
   flex-wrap: wrap;
-  &__column {
-    @each $column in 3, 4, 6 {
-      &--#{$column} {
-        flex-basis: calc((100% - ($column - 1) * $grid-gutter) / $column);
+  &__column--4 {
+    flex-basis: 100%;
+  }
+  &__column--6 {
+    flex-basis: calc((100% - $grid-gutter) / 2);
+  }
+}
+
+@media (min-width: $tablet-breakpoint) {
+  .grid {
+    &__column--4 {
+      flex-basis: calc((100% - $grid-gutter) / 2);
+    }
+    &__column--6 {
+      flex-basis: calc((100% - 2 * $grid-gutter) / 3);
+    }
+  }
+}
+@media (min-width: $desktop-breakpoint) {
+  .grid {
+    display: flex;
+    gap: $grid-gutter;
+    flex-wrap: wrap;
+    &__column {
+      @each $column in 3, 4, 6 {
+        &--#{$column} {
+          flex-basis: calc((100% - ($column - 1) * $grid-gutter) / $column);
+        }
       }
     }
   }

@@ -1,21 +1,6 @@
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    &--page-header {
-      display: flex;
-      align-items: center;
-      /* todo: make modifications */
-      & > :first-child {
-        margin-right: 93px;
-      }
-      & > :last-child {
-        margin-left: auto;
-      }
-    }
-    &--footer {
-      display: flex;
-      align-items: baseline;
-      column-gap: 70px;
-    }
-  }
+  min-width: $min-width;
+  max-width: $desktop-breakpoint;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}

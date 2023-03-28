@@ -1,17 +1,18 @@
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: $section-padding-small;
+  padding-bottom: $section-padding-small;
   &__header {
+    margin-bottom: 30px;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 28px;
+    line-height: 1.18;
     text-align: center;
-    line-height: 1.15;
-    margin-bottom: 50px;
   }
-  &__filters{
-    margin-bottom: 50px;
+  &__filters {
+    margin-bottom: 40px;
   }
   &--hero-image {
+    min-height: 400px;
     background-image: linear-gradient(
         rgba(47, 48, 58, 0.4),
         rgba(47, 48, 58, 0.4)
@@ -20,8 +21,33 @@
     background-color: $color-grey-900;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
   }
   &--grey {
     background-color: $color-grey-100;
+  }
+  &--hidden-on-small {
+    display: none;
+  }
+}
+
+@media (min-width: $tablet-breakpoint) {
+  .section {
+    &__header {
+      font-weight: 700;
+      font-size: 36px;
+      text-align: center;
+      line-height: 1.15;
+      margin-bottom: 50px;
+    }
+    &__filters {
+      margin-bottom: 50px;
+    }
+  }
+}
+@media (min-width: $desktop-breakpoint) {
+  .section {
+    padding-top: $section-padding-large;
+    padding-bottom: $section-padding-large;
   }
 }

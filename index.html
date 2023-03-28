@@ -18,16 +18,16 @@
 
 <body>
   <header class="page-header">
-    <div class="container container--page-header">
-      <a href="/" class="logo">Web<span class="logo__accent">Studio</span></a>
-      <nav class="nav">
+    <div class="container page-header__container">
+      <a href="/" class="page-header__logo logo">Web<span class="logo__accent">Studio</span></a>
+      <nav class="page-header__nav nav">
         <ul class="nav__list">
           <li><a href="./index.html" class="nav__link nav__link--active">Agencja</a></li>
           <li><a href="./potfolio.html" class="nav__link">Portfolio</a></li>
           <li><a href="#" class="nav__link">Kontakty </a></li>
         </ul>
       </nav>
-      <div class="contact">
+      <div class="page-header__contact contact">
         <ul class="contact__list">
           <li>
             <a class="contact__link" href="mailto:info@devstudio.com">
@@ -45,6 +45,13 @@
           </li>
         </ul>
       </div>
+      <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
     </div>
   </header>
   <main>
@@ -112,7 +119,7 @@
         </ul>
       </div>
     </section>
-    <section class="section">
+    <section class="section section--hidden-on-small">
       <div class="container">
         <h2 class="section__header">Czym się zajmujemy</h2>
         <ul class="grid">
@@ -301,8 +308,8 @@
     </section>
   </main>
   <footer class="footer">
-    <div class="container container--footer">
-      <div class="footer__adress">
+    <div class="container footer__container">
+      <div class="footer__address">
         <address class="address">
           <p href="/" class="address__logo logo logo--white">Web<span class="logo__accent">Studio</span></p>
           m. Warszawa, Aleje Jerozolimskie 21 <br>
@@ -335,7 +342,7 @@
           </a>
         </div>
       </div>
-      <div>
+      <div class="footer__form">
         <h3 class="footer__header">Zapisz się do newslettera</h3>
         <form class="form form--vertical" name="newsletter_form" action="javascript:void(0);" method="POST">
           <label class="form__input-group input-group input-group--theme-black">
@@ -353,62 +360,113 @@
   </footer>
 
   <div class="backdrop is-hidden" data-modal>
-    <dialog class="modal">
-      <div class="modal__close button button--close" data-modal-close>
-        <svg class="button__icon" width="11" height="11">
-          <use href="./images/icons.svg#icon-close"></use>
-        </svg>
-      </div>
-      <form class="form" name="service_form" action="javascript:void(0);" method="POST">
-        <h3 class="form__header">Zostaw swoje dane w formularzu poniżej</h3>
-        <label class="form__input-group input-group">
-          <div class="input-group__label">Imię</div>
-          <div class="input-group__wrapper">
-            <input class="input-group__input" name="name" type="text" placeholder=" " maxlength="24" required />
-            <svg class="input-group__icon">
-              <use href="./images/icons.svg#icon-person"></use>
-            </svg>
-          </div>
-        </label>
-        <label class="form__input-group input-group">
-          <div class="input-group__label">Telefon</div>
-          <div class="input-group__wrapper">
-            <input class="input-group__input" name="phone" type="tel" placeholder=" "
-              pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$" title="Telefon może z" required />
-            <svg class="input-group__icon">
-              <use href="./images/icons.svg#icon-phone"></use>
-            </svg>
-          </div>
-        </label>
-        <label class="form__input-group input-group">
-          <div class="input-group__label">Email</div>
-          <div class="input-group__wrapper">
-            <input class="input-group__input" name="email" type="email" placeholder=" " required />
-            <svg class="input-group__icon">
-              <use href="./images/icons.svg#icon-email"></use>
-            </svg>
-          </div>
-        </label>
-        <label class="form__input-group input-group">
-          <div class="input-group__label">Komentarz</div>
-          <textarea class="input-group__input input-group__input--textarea" type="text" name="comment"
-            placeholder="Wprowadź tekst" rows="6"></textarea>
-        </label>
-        <label class="form__checkbox-group checkbox-group">
-          <input type="checkbox" class="checkbox-group__checkbox" name="regulation-consent" value="yes" />
-          <div class="checkbox-group__label">
-            Oświadczam iż akceptuję <a class="link" href="">Regulamin</a> i <a class="link" href="">Politykę
-              Prywatności</a>.
-          </div>
-        </label>
-        <button class="form__button button" type="submit">
-          <span class="button__label">Wyślij</span>
+    <div class="container">
+      <dialog class="modal">
+        <button class="modal__close button button--close" data-modal-close>
+          <svg class="button__icon" width="11" height="11">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
         </button>
-      </form>
-    </dialog>
+        <form class="form" name="service_form" action="javascript:void(0);" method="POST">
+          <h3 class="form__header">Zostaw swoje dane w formularzu poniżej</h3>
+          <label class="form__input-group input-group">
+            <div class="input-group__label">Imię</div>
+            <div class="input-group__wrapper">
+              <input class="input-group__input" name="name" type="text" placeholder=" " maxlength="24" required />
+              <svg class="input-group__icon">
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+            </div>
+          </label>
+          <label class="form__input-group input-group">
+            <div class="input-group__label">Telefon</div>
+            <div class="input-group__wrapper">
+              <input class="input-group__input" name="phone" type="tel" placeholder=" "
+                pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$" title="Telefon może z" required />
+              <svg class="input-group__icon">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
+          </label>
+          <label class="form__input-group input-group">
+            <div class="input-group__label">Email</div>
+            <div class="input-group__wrapper">
+              <input class="input-group__input" name="email" type="email" placeholder=" " required />
+              <svg class="input-group__icon">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </div>
+          </label>
+          <label class="form__input-group input-group">
+            <div class="input-group__label">Komentarz</div>
+            <textarea class="input-group__input input-group__input--textarea" type="text" name="comment"
+              placeholder="Wprowadź tekst" rows="6"></textarea>
+          </label>
+          <label class="form__checkbox-group checkbox-group">
+            <input type="checkbox" class="checkbox-group__checkbox" name="regulation-consent" value="yes" />
+            <div class="checkbox-group__label">
+              Oświadczam iż akceptuję <a class="link" href="">Regulamin</a> i <a class="link" href="">Politykę
+                Prywatności</a>.
+            </div>
+          </label>
+          <button class="form__button button" type="submit">
+            <span class="button__label">Wyślij</span>
+          </button>
+        </form>
+      </dialog>
+    </div>
   </div>
 
+  <div class="menu-mobile js-menu-container">
+    <button class="menu-mobile__button js-close-menu">
+      <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <path fill-rule="evenodd"
+          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+
+    <ul class="menu-mobile__nav">
+      <li><a href="" class="menu-mobile__link menu-mobile__link--active">Agencja</a></li>
+      <li><a href="./potfolio.html" class="menu-mobile__link">Portfolio</a></li>
+      <li><a href="#" class="menu-mobile__link">Kontakt</a></li>
+    </ul>
+
+    <a class="menu-mobile__phone" href="tel:+48111111111">+48 111 111 111</a>
+    <a class="menu-mobile__mail" href="mailto:info@devstudio.com">info@devstudio.com</a>
+
+    <ul class="menu-mobile__socials mobile-socials">
+      <li class="mobile-socials__link">
+        <a href="#">
+          Instagram
+        </a>
+      </li>
+      <li class="mobile-socials__link">
+        <a href="#">
+          Twitter
+        </a>
+      </li>
+      <li class="mobile-socials__link">
+        <a href="#">
+          Facebook
+        </a>
+      </li>
+      <li class="mobile-socials__link">
+        <a href="#">
+          LinkedIn
+        </a>
+      </li>
+  </div>
+
+  </div>
+
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+    integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+    crossorigin="anonymous"></script>
+
   <script src="./js/modal.js"></script>
+  <script src="./js/mobile-menu.js"></script>
 </body>
 
 </html>

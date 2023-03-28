@@ -1,16 +1,28 @@
 .hero {
   text-align: center;
-  padding: calc(200px - 94px) 250px;
+  padding: calc(118px - $section-padding-large) 36px;
   &__header {
     margin-bottom: 30px;
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.35;
+    font-size: 26px;
+    line-height: 1.62;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: $color-white;
   }
-  &__button {
-    margin: 0 auto;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .hero {
+    padding: calc(200px - $section-padding-large) 250px;
+    &__header {
+      margin-bottom: 30px;
+      font-weight: 900;
+      font-size: 44px;
+      line-height: 1.35;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: $color-white;
+    }
   }
 }

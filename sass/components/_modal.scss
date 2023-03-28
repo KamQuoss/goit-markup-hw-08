@@ -17,7 +17,8 @@
 .modal {
   display: block;
   position: absolute;
-  width: 528px;
+  width: calc(100% - 2 * $container-padding);
+  max-width: 450px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -27,9 +28,15 @@
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border: none;
   border-radius: $border-radius;
-  &__close{
+  &__close {
     position: absolute;
     right: 8px;
     top: 8px;
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .modal {
+    max-width: 528px;
   }
 }
